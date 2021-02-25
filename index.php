@@ -27,5 +27,13 @@
     <input type="submit" value="Confirmar" name="btnconfirmar">
     </form>
     </center>
+    <?php 
+    if (isset($_POST['btnconfirmar'])) {
+        $_id = $_POST['id'];
+        $_nombre = $_POST['nombre'];
+        $_apellido = $_POST['apellido'];
+        $_telefono = $_POST['telefono'];
+    }
+    ?>
 </body>
 </html>
