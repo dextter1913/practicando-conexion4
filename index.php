@@ -33,6 +33,19 @@
         $_nombre = $_POST['nombre'];
         $_apellido = $_POST['apellido'];
         $_telefono = $_POST['telefono'];
+        $_usuario = $_POST['usuario'];
+        $_contraseña = $_POST['contraseña'];
+        $_contraseña2 = $_POST['contraseña2'];
+
+        if ($_contraseña === $_contraseña2) {
+            include("./clases/open-conexion.php");
+            $conexion->query("INSERT INTO $table2(user, pass) VALUES('$_usuario','$_contraseña')");
+            $conexion->query("INSERT INTO $table1(id, nombre, apellido, telefono, user) VALUES('$_id','$_nombre','$_apellido','$_telefono',''$_usuario)");
+            include("./clases/close-conexion.php");
+        } else {
+            echo "las contraseñas no coinciden, intentalo de nuevo";
+        }
+        
     }
     ?>
 </body>
