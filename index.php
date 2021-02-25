@@ -39,14 +39,17 @@
 
         if ($_contraseña === $_contraseña2) {
             include("./clases/open-conexion.php");
-            $conexion->query("INSERT INTO $table2(user, pass) VALUES('$_usuario','$_contraseña')");
-            $conexion->query("INSERT INTO $table1(id, nombre, apellido, telefono, user) VALUES('$_id','$_nombre','$_apellido','$_telefono',''$_usuario)");
+            $conexion->query("INSERT INTO $tabla2(user, pass) VALUES('$_usuario','$_contraseña')");
+            $conexion->query("INSERT INTO $tabla1(id, nombre, apellido, telefono, user) VALUES('$_id','$_nombre','$_apellido','$_telefono','$_usuario')");
             include("./clases/close-conexion.php");
+            echo "usuario registrado correctamente";
         } else {
             echo "las contraseñas no coinciden, intentalo de nuevo";
         }
         
     }
     ?>
+    <?php 
+    /*            */?>
 </body>
 </html>
